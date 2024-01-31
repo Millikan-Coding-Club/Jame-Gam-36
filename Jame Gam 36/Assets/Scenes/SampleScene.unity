@@ -1980,7 +1980,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2279,7 +2279,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3249,8 +3249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mazeCellPrefab: {fileID: 1184745214223402433, guid: ec89c8af822e641b7b2a7b657b385c99, type: 3}
-  _mazeWidth: 20
-  _mazeDepth: 20
+  _mazeWidth: 10
+  _mazeDepth: 10
 --- !u!4 &2012205730
 Transform:
   m_ObjectHideFlags: 0
@@ -3305,7 +3305,7 @@ MonoBehaviour:
   m_Follow: {fileID: 734600528}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7
+    OrthographicSize: 1
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
