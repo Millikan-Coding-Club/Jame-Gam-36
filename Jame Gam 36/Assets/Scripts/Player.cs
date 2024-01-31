@@ -24,6 +24,6 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(horizontal, vertical).normalized * speed * Time.deltaTime;
+        body.velocity = new Vector2(horizontal, vertical).normalized * speed;
     }
 }
