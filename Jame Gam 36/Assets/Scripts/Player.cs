@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Candle : MonoBehaviour
+public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,6 @@ public class Candle : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(horizontal * speed, vertical * speed);
+        body.velocity = new Vector2(horizontal, vertical).normalized * speed * Time.deltaTime;
     }
 }
