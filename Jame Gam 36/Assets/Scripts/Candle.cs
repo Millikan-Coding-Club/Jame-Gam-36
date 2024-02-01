@@ -10,16 +10,28 @@ public class Candle : MonoBehaviour
     private float outerRadiusDefault;
     private float intensityDefault;
     private Light2D candle;
+    private float currentIntensity;
     private void Start()
     {
         candle = GetComponent<Light2D>();
         intensityDefault = GetComponent<Light2D>().intensity;
         outerRadiusDefault = GetComponent<Light2D>().pointLightOuterRadius;
+        InvokeRepeating("Flicker", 0f, Random.Range(1, 10));
     }
     // Update is called once per frame
     void Update()
     {
-        candle.intensity = candle.intensity - dimSpeed * Time.deltaTime * intensityDefault;
-        candle.pointLightOuterRadius = candle.pointLightOuterRadius - dimSpeed * Time.deltaTime * outerRadiusDefault;
+        if (candle.intensity != 0)
+        {
+            candle.intensity = candle.intensity - dimSpeed * Time.deltaTime * intensityDefault;
+            candle.pointLightOuterRadius = candle.pointLightOuterRadius - dimSpeed * Time.deltaTime * outerRadiusDefault;
+        }
+    }
+
+    private void Flicker()
+    {
+        currentIntensity = candle.intensity;
+        candle.intensity = 0f;
+        candle.intensity = currentIntensity;
     }
 }
