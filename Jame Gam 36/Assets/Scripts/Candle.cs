@@ -16,7 +16,7 @@ public class Candle : MonoBehaviour
         candle = GetComponent<Light2D>();
         intensityDefault = GetComponent<Light2D>().intensity;
         outerRadiusDefault = GetComponent<Light2D>().pointLightOuterRadius;
-        InvokeRepeating("Flicker", 0f, Random.Range(1, 10));
+        InvokeRepeating("Flicker", 0f, Random.Range(2f, 10f));
     }
     // Update is called once per frame
     void Update()
@@ -32,6 +32,10 @@ public class Candle : MonoBehaviour
     {
         currentIntensity = candle.intensity;
         candle.intensity = 0f;
+        Invoke("ResetIntensity", Random.Range(0.1f, 0.3f));
+    }
+    private void ResetIntensity()
+    {
         candle.intensity = currentIntensity;
     }
 }
